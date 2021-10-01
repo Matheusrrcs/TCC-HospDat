@@ -14,7 +14,6 @@
 
 
 /* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -219,28 +218,21 @@ body{
 }
 .home-section{
   position: relative;
-  min-height: 100vh;
-  top: 0;
   left: 78px;
   width: calc(100% - 78px);
   transition: all 0.5s ease;
   z-index: 2;
+ 
 }
 .sidebar.open ~ .home-section{
   left: 250px;
   width: calc(100% - 250px);
 }
-.home-section .text{
-  display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px
-}
+ 
 @media (max-width: 420px) {
   .sidebar li .tooltip{
     display: none;
   }
 }
 /* --------------------------Section------------------ */
-
+ 

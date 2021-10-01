@@ -1,0 +1,70 @@
+ 
+:root{
+    --i-color:#e17468;
+    --text-color:#fff;
+    --nav-color-hover:#15105e;
+    --nav-color:#1b1583;
+ }
+
+
+.flex-dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+aside{
+    display: block;
+    height: 100%;
+    width: 300px;
+    background:#1A252A;
+}
+
+main{
+    display: block;
+    height: 100%;
+    width: calc(100% - 300px);
+}
+
+.flex-dashboard header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    background: url(../imagens/bkg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 70px;
+    padding: 10px 30px;
+}
+
+aside .sidebar-title{
+ display:flex;
+ justify-content: center;
+ align-items:center;
+ padding:10px 30px;
+ height: 70px;
+ border:1px solid rgba(0, 0, 0, 0.315);
+ border-right: 0px;
+}
+
+aside .sidebar-title i{
+    color:var(--i-color);
+}
+
+
+aside .sidebar-title h2{
+    font-size:18px;
+    margin-top:8px;
+    color:var(--text-color);
+}
+
+aside .sidebar-title h2,aside .sidebar-title i{
+    margin: 7px;
+}
+
+.menu{
+    border:1px solid rgba(0, 0, 0, 0.315);
+}
