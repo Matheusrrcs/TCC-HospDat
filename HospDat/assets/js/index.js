@@ -4,11 +4,11 @@ let closeBtn = document.querySelector("#btn");
 
 closeBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("open");
-  menuBtnChange();//calling the function(optional)
+  menuBtnChange();//calling the function
 });
 
  
-// following are the code to change sidebar button(optional)
+// following are the code to change sidebar button 
 function menuBtnChange() {
  if(sidebar.classList.contains("open")){
    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class

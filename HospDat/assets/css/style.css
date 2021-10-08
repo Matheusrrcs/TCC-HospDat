@@ -12,16 +12,7 @@
   font-family: "Poppins" , sans-serif;
 }
 
-body {
-  height: 100vh;
-  width: 100vw;
-  background: url(../imagens/bkg.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
+ 
  /* -------------------------HEADER------------------ */
 
 .sidebar {
@@ -67,7 +58,6 @@ body {
   right: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  transition: all 0.4s ease;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
@@ -93,7 +83,7 @@ body {
   margin: 8px 0;
   list-style: none;
 }
-.sidebar li .tooltip{
+.sidebar li .tp{
   position: absolute;
   top: -20px;
   left: calc(100% + 15px);
@@ -101,22 +91,21 @@ body {
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   font-size: 15px;
   font-weight: 400;
-  opacity: 0;
   white-space: nowrap;
   pointer-events: none;
   transition: 0s;
 }
-.sidebar li:hover .tooltip{
+  .sidebar li:hover.tp{
   opacity: 1;
   pointer-events: auto;
   transition: all 0.4s ease;
   top: 50%;
   transform: translateY(-50%);
 }
-.sidebar.open li .tooltip{
+ .sidebar.open li .tp{
   display: none;
 }
 .sidebar li a{
@@ -139,7 +128,7 @@ body {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: 0.4s;
+  transition: all 0.4s ;
 }
 .sidebar.open li a .links_name{
   opacity: 1;
@@ -156,63 +145,15 @@ body {
   font-size: 24px;
   border-radius: 12px;
 }
-.sidebar li.profile{
-  position: fixed;
-  height: 60px;
-  width: 78px;
-  left: 0;
-  bottom: -8px;
-  padding: 10px 14px;
-  background: #1d1b31;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
-.sidebar.open li.profile{
-  width: 250px;
-}
-.sidebar li .profile-details{
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.sidebar li img{
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-right: 10px;
-}
-.sidebar li.profile .name,
-.sidebar li.profile .job{
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  white-space: nowrap;
-}
-.sidebar li.profile .job{
-  font-size: 12px;
-}
-.sidebar .profile #log_out{
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: #1d1b31;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 0px;
-  transition: all 0.5s ease;
-}
-.sidebar.open .profile #log_out{
-  width: 50px;
-  background: none;
-}
+ 
+ 
 @media (max-width: 420px) {
-  .sidebar li .tooltip{
+  .root .sidebar li .tp{
     display: none;
   }
 }
+
+
 /* --------------------------Section------------------ */
 
 .root {
@@ -221,15 +162,15 @@ body {
   flex-wrap: nowrap;
   width: 100%;
   height: 100%;
+  
 }
 
 .content {
   flex-grow: 1;
   margin: 3rem;
-  padding: 3rem;
   background-color: #fff;
   border-radius: 2rem;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .content img {
@@ -240,6 +181,8 @@ body {
 @media (max-width: 420px) {
   .content {
     margin: 1rem;
-    padding: 1rem;
   }
+}
+map area:hover{
+  box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
 }

@@ -10,6 +10,11 @@ html,body{
 }
 
 body{
-    background:#EFF1F3;
-     
+    height: 100%;
+    width: 100%;
+    background: url(../imagens/bkg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
