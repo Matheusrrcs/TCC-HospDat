@@ -12,6 +12,10 @@ app.config(function ($routeProvider, $locationProvider) {
             
 
         })
+        .when('/dashBoard',{
+            templateUrl: 'app/views/dashBoard.html'
+        })
 
         .otherwise({ redirectTo: '/' });
+        
 });

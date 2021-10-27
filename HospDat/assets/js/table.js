@@ -59,7 +59,9 @@ function search() {
 
 //retorna o elemento html clicado 
 const html = {
+
   get(element) {
+
     return document.querySelector(element);
   }
 }
@@ -71,11 +73,21 @@ const list = {
     div.classList.add('item');
     div.innerHTML = item;
 
-    html.get('.list').appendChild(div);
+    try {
+      html.get('.list').appendChild(div);
+    } catch (error) {
+
+    }
+
 
   },
   update() {
-    html.get('.list').innerHTML = "";
+    try {
+      html.get('.list').innerHTML = "";
+    } catch (error) {
+
+    }
+
 
     let page = state.page - 1;
     let start = page * state.perPage;
@@ -146,22 +158,22 @@ const buttons = {
 
 function changeScreen() {
 
-  const change = addEventListener('click', ( ) => {
+  const change = addEventListener('click', () => {
 
     if ($(window).height() < 500) {
       state.perPage = 1;
-      console.log("entrei");
+
       update();
-  
+
     }
-  if ($(window).height() > 600) {
+    if ($(window).height() > 600) {
       state.perPage = 5;
-      console.log("entrei2  ");
+
       update();
     }
     // 
   })
- 
+
 
 }
 
