@@ -11,7 +11,17 @@ async function getContent() {
   }
  
 } 
- 
+let titulos;
+
+function mostra(value){
+  console.log(value)
+ }
+
+ getContent().then(value =>{
+  mostra(value)
+ })
+
+
 
   
 
