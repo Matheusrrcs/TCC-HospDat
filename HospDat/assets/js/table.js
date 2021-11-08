@@ -23,10 +23,10 @@ function mostra(value){
 
 console.log(titulos)
  
-function data(value){
+ 
 const data = Array.from({ length: value.length })
   .map((_, i) => `${value[i].toLowerCase()}`);
-}
+ 
 
 let t = data;
 
