@@ -14,19 +14,27 @@ async function getContent() {
 let titulos;
 
 function mostra(value){
- titulos = value
+  console.log(value)
  }
 
  getContent().then(value =>{
   mostra(value)
  })
 
-console.log(titulos)
- 
- 
-const data = Array.from({ length: value.length })
-  .map((_, i) => `${value[i].toLowerCase()}`);
- 
+
+
+  
+
+function valorR() {
+  let dois = ['Maçã', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia', 'Banana', 'Uva', 'Pera', 'Pessego', 'Meleancia']
+  return dois;
+}
+
+let valor = valorR()
+
+const data = Array.from({ length: valor.length })
+  .map((_, i) => `${valor[i].toLowerCase()}`);
+
 
 let t = data;
 
