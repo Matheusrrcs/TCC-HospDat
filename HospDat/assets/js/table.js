@@ -11,18 +11,8 @@ async function getContent() {
   }
  
 } 
-let titulos;
 
-function mostra(value){
-  console.log(value)
- }
-
- getContent().then(value =>{
-  mostra(value)
- })
-
-
-
+ 
   
 
 function valorR() {
@@ -147,7 +137,7 @@ const list = {
   notFound(item) {
     const conjunto = document.createElement('div');
     const div = document.createElement('img');
-    div.src = '/HospDat/assets/imagens/notFound.jpg'
+    div.src = 'imagens/notFound.jpg'
 
     const h5 = document.createElement('h5');
     h5.innerText = item;
