@@ -1,15 +1,37 @@
-const data = Array.from({ length: 100 })
-  .map((_, i) => `item ${i + 1}`);
+ 
+async function getContent() {
+  try {
+    const response = await fetch('http://localhost:4567/titulos')
+
+    const dados = await response.json()
+   
+  return dados
+  } catch (error) {
+    console.log(error)
+  }
+ 
+} 
+let titulos;
+
+function mostra(value){
+ titulos = value
+ }
+
+ getContent().then(value =>{
+  mostra(value)
+ })
+
+console.log(titulos)
+ 
+function data(value){
+const data = Array.from({ length: value.length })
+  .map((_, i) => `${value[i].toLowerCase()}`);
+}
 
 let t = data;
 
 // total de paginas a seres exibidas 
 let perPage = 5;
-
-
-
-
-
 
 const state = {
   page: 1,//por onde começa a pagina
@@ -28,6 +50,8 @@ function search() {
 
     const searchString = e.target.value;
 
+
+
     const filterItem = data.filter(item => {
 
 
@@ -37,15 +61,20 @@ function search() {
 
     t = filterItem;
 
+
+
     if (filterItem.length === data.length) {
       controls.goTo(1);
       state.totalPage = Math.ceil(data.length / perPage)
       update();
     }
-    else if ((filterItem.length == 0)) {
+    if (!filterItem.length) {
       controls.goTo(1);
+      state.totalPage = Math.ceil(filterItem.length + 1 / perPage)
+      update();
     }
-    else {
+
+    if (filterItem.length) {
       controls.goTo(1);
       state.totalPage = Math.ceil(filterItem.length / perPage)
       update();
@@ -66,8 +95,34 @@ const html = {
   }
 }
 
+
+function changeScreen() {
+
+  const change = addEventListener('click', () => {
+
+    if ($(window).height() < 500) {
+      state.perPage = 1;
+
+      update();
+
+    }
+    if ($(window).height() > 600) {
+      state.perPage = 5;
+
+      update();
+    }
+    
+console.log(titulos)
+ 
+    // 
+  })
+
+
+}
+
+//cria e atualiza a lista no front 
 const list = {
-  creat(item) {
+  creatItem(item) {
 
     const div = document.createElement('li');
     div.classList.add('item');
@@ -81,24 +136,51 @@ const list = {
 
 
   },
+  notFound(item) {
+    const conjunto = document.createElement('div');
+    const div = document.createElement('img');
+    div.src = '/HospDat/assets/imagens/notFound.jpg'
+
+    const h5 = document.createElement('h5');
+    h5.innerText = item;
+
+    div.classList.add('notFound');
+
+    conjunto.classList.add('notFoundConj')
+
+    try {
+      html.get('.list').appendChild(conjunto);
+      html.get('.notFoundConj').appendChild(div);
+      html.get('.notFoundConj').appendChild(h5)
+
+    } catch (error) {
+
+    }
+  },
   update() {
     try {
       html.get('.list').innerHTML = "";
     } catch (error) {
 
     }
-
-
+    let empety = "Nenhum resultado foi encontrado"
     let page = state.page - 1;
     let start = page * state.perPage;
     let end = start + state.perPage;
 
     const paginatedItems = t.slice(start, end);
 
-    paginatedItems.forEach(list.creat);
 
+    if (!t.length) {
+
+      list.notFound(empety)
+    }
+    if (t.length) {
+      paginatedItems.forEach(list.creatItem);
+    }
   }
 }
+
 
 
 //cria os butões de numeros e organiza a quantidade
@@ -156,26 +238,7 @@ const buttons = {
   }
 }
 
-function changeScreen() {
 
-  const change = addEventListener('click', () => {
-
-    if ($(window).height() < 500) {
-      state.perPage = 1;
-
-      update();
-
-    }
-    if ($(window).height() > 600) {
-      state.perPage = 5;
-
-      update();
-    }
-    // 
-  })
-
-
-}
 
 
 //função dos controladores
@@ -239,6 +302,7 @@ function update() {
 
 //chama todas as funções necessarias
 function init() {
+  
   search();
   update();
   changeScreen()
@@ -247,3 +311,5 @@ function init() {
 }
 
 init();
+
+

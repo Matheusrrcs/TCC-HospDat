@@ -66,9 +66,10 @@ width:100%;
 margin: 1rem auto;
 
 }
-
+ 
 .pagina .list{
 list-style: none;
+ align-items: center;
 }
 
 .pagina .list .item{
@@ -122,11 +123,28 @@ margin: 0 0.5rem 0 0.5rem;
 } 
 
 
-
 .pagina .pagination div.numbers{
 margin: 0 4rem 0 4rem;
 }
 
 .pagina .pagination div.numbers div.active{
 color:var(--i-color);
+}
+
+.notFound   {
+    width:300px;
+    height:300px;
+    
+
+}
+
+.titleNotFound{
+text-align: center;
+}
+
+.notFoundConj{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
 }
