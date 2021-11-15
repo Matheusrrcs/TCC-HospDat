@@ -16,9 +16,6 @@ app.use(cors())
 app.get('/titulos', (req, res) => {
     return res.json([
         { name: 'Distribuição de respiradores' },
-        { name: 'Unidades Básicas de Saúde - UBS' },
-        { name: 'Campanha Nacional de Vacinação contra Covid-19' },
-        { name: 'Registro de Ocupação Hospitalar COVID-19' }
 
     ])
 })
