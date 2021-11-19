@@ -91,45 +91,48 @@ function chart(object) {
    ];
 
    // Create the chart
+ 
+Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/germany.geo.json', function (geojson) {
+
+   // Initialize the chart
    Highcharts.mapChart('container', {
-      chart: {
-         map: 'countries/br/br-all'
-      },
+       chart: {
+           map: geojson
+       },
 
-      title: {
-         text: 'Valor gasto por respiradores'
-      },
+       title: {
+           text: 'GeoJSON in Highmaps'
+       },
 
-      subtitle: {
-         text: 'Por estado do Brasil'
-      },
+       mapNavigation: {
+           enabled: true,
+           buttonOptions: {
+               verticalAlign: 'bottom'
+           }
+       },
 
-      mapNavigation: {
-         enabled: true,
-         buttonOptions: {
-            verticalAlign: 'bottom'
-         }
-      },
+       colorAxis: {
+           tickPixelInterval: 100
+       },
 
-      colorAxis: {
-         min: 0
-      },
-
-      series: [{
-         data: data,
-         name: 'Valor gasto',
-         states: {
-            hover: {
-               color: '#e17468'
-            }
-         },
-         dataLabels: {
-            enabled: true,
-            format: '{point.name}'
-         }
-      }]
+       series: [{
+           data: data,
+           keys: ['code_hasc', 'value'],
+           joinBy: 'code_hasc',
+           name: 'Random data',
+           states: {
+               hover: {
+                   color: '#a4edba'
+               }
+           },
+           dataLabels: {
+               enabled: true,
+               format: '{point.properties.postal}'
+           }
+       }]
    });
-
+});
+             
 
 
 
