@@ -66,7 +66,7 @@ function chart(object) {
       ['br-sp', 0],
       ['br-ma', 1],
       ['br-pa', 2],
-      ['br-sc', 63.884,554],
+      ['br-sc', 5],
       ['br-ba', object.bahia()],
       ['br-ap', 5],
       ['br-ms', 6],
