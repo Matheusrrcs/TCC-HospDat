@@ -23,7 +23,7 @@ app.get('/titulos', (req, res) => {
 
 function Respiradores(valor){
 
-    app.get('/Distribuicao_respiradores', (req, res) => {
+    app.get('/distribuicao_respiradores', (req, res) => {
     return res.json(valor)
 })
 
