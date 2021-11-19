@@ -39,7 +39,7 @@ function estados(value) {
          let soma = 0
 
          for (user of value) {
-            console.log(user.DESTINO)
+           
             if (user.DESTINO == 'BAHIA') {
                soma = soma + apenasNumeros(user.VALOR)
             }
@@ -58,8 +58,6 @@ function estados(value) {
 
 
 function chart(object) {
-
-   // console.log(object.bahia());
 
 
    var data = [
