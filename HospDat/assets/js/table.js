@@ -14,9 +14,8 @@ function show(valor){
 
 
 function dataBase(valor){
-
- console.log(valor)
-  let data = Array.from({ length: valor.length }).map((_, i) => `${valor[i].name.toLowerCase()}`)
+ 
+  let data = Array.from({ length: valor.length }).map((_, i) => `<a href="#/${valor[i].name.toLowerCase().replaceAll("ã","a").replaceAll("ç","c").replaceAll(" ","_")}">${valor[i].name.toLowerCase()}</a>`)
 
   // for(let i = 0; i < json.length; i++){
   //               data = json[i]
@@ -60,7 +59,7 @@ function dataBase(valor){
       });
 
        t= filterItem;
-      console.log(state.perPage)
+    
 
 
       if (filterItem.length === data.length) {

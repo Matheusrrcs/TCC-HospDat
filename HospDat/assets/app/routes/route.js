@@ -15,7 +15,11 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/dashBoard',{
             templateUrl: 'app/views/dashBoard.html'
         })
-
+        .when('/distribuicao_de_respiradores',{
+            
+            templateUrl: 'app/views/distribuicao_de_respiradores.html'
+        })
+   
         .otherwise({ redirectTo: '/' });
         
 });
