@@ -1,6 +1,6 @@
 
 
- fetch("http://localhost:4567/titulos").then((response) =>
+ fetch("http://tcc-hosp-dat.vercel.app:4567/titulos").then((response) =>
   response.json()).then((json) => {
   
   dataBase(json)    
