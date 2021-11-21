@@ -1,8 +1,11 @@
 
+const uf = ["ACRE", "ALAGOAS", "AMAPA", "AMAZONAS", "BAHIA", "CEARA", "ESPIRITO SANTO", "DISTRITO FEDERAL", "GOIAS", "MARANHÃO", "MINAS GERAIS", "MATO GROSSO DO SUL", "MATO GROSSO", "PARA", "PARAIBA", "PERNAMBUCO", "PIAUI", "PARANA", "RIO DE JANEIRO", "RIO GRANDE DO NORTE", "RONDONIA", "RORAIMA", "RIO GRANDE DO SUL", "SANTA CATARINA", "SERGIPE", "SÃO PAULO", "TOCANTINS"]
+
 fetch("http://localhost:4567/distribuicao_respiradores").then((response) =>
    response.json()).then((json) => {
 
-      estados(json)
+      init(json)
+
 
 
    }).catch((error) => {
@@ -16,79 +19,77 @@ function apenasNumeros(string) {
    return parseFloat(numsStr);
 }
 
-
-// function estados(value){
-
-// const uf = {
-
-//    bahia(){
-
-//    }
-
-
-// }
-
-// }
-
-function estados(value) {
-
-   const ufs = {
-
-      bahia() {
-         let valorGasto;
-         let soma = 0
-
-         for (user of value) {
-           
-            if (user.DESTINO == 'BAHIA') {
-               soma = soma + apenasNumeros(user.VALOR)
-            }
-         }
-         valorGasto = soma
- 
-
-         return valorGasto
-      }
-   }
-
-
-   chart(ufs);
+function init(json) {
+   dados.states(json)
+   dados.amount(json)
 }
 
+const dados = {
+
+   states(value) {
+      let soma = 0
+      let dados = []
+
+      for (let i = 0; i < uf.length; i++) {
+
+         for (user of value) {
+
+            if (user.DESTINO == uf[i]) {
+
+               soma = soma + apenasNumeros(user.VALOR)
+
+            }
+
+         }
+
+         dados[i] = soma;
+
+         soma = 0;
+
+      }
+
+      chartMap(dados);
+   },
+   amount(value) {
+      let soma = 0
+      let dados = []
+
+      for (let i = 0; i < uf.length; i++) {
+
+         for (user of value) {
+
+            if (user.DESTINO == uf[i]) {
+
+               soma = soma + apenasNumeros(user.QUANTIDADE)
+
+            }
+
+         }
+
+         dados[i] = soma;
+
+         soma = 0;
+
+      }
+      chartPiza(dados);
+   }
+
+}
+
+function chartMap(object) {
+
+   var ufData = ['br-ac', 'br-al', 'br-ap', 'br-am', 'br-ba', 'br-ce', 'br-es', 'br-df', 'br-go', 'br-ma', 'br-mg', 'br-ms', 'br-mt', 'br-pa', 'br-pb', 'br-pe', 'br-pi', 'br-pr', 'br-rj', 'br-rn', 'br-ro', 'br-rr', 'br-rs', 'br-sc', 'br-se', 'br-sp', 'br-to']
 
 
-function chart(object) {
+   var data = [];
 
 
-   var data = [
-      ['br-sp', 0],
-      ['br-ma', 1],
-      ['br-pa', 2],
-      ['br-sc', 5],
-      ['br-ba', 2],
-      ['br-ap', 5],
-      ['br-ms', 6],
-      ['br-mg', 7],
-      ['br-go', 8],
-      ['br-rs', 9],
-      ['br-to', 10],
-      ['br-pi', 11],
-      ['br-al', 12],
-      ['br-pb', 13],
-      ['br-ce', 14],
-      ['br-se', 15],
-      ['br-rr', 16],
-      ['br-pe', 17],
-      ['br-pr', 18],
-      ['br-es', 19],
-      ['br-rj', 20],
-      ['br-rn', 21],
-      ['br-am', 22],
-      ['br-mt', 23],
-      ['br-df', 24],
-      ['br-ac', 25],
-      ['br-ro', 26]
-   ];
+   for (let i = 0; i < object.length; i++) {
+
+      data[i] = [ufData[i], object[i]]
+
+   }
+
 
    // Create the chart
    Highcharts.mapChart('container', {
@@ -101,7 +102,7 @@ function chart(object) {
       },
 
       subtitle: {
-         text: 'Por estado do Brasil'
+         text: 'Por estado do Brasil 2020/2021'
       },
 
       mapNavigation: {
@@ -112,7 +113,7 @@ function chart(object) {
       },
 
       colorAxis: {
-         min: 0
+         min: 100000
       },
 
       series: [{
@@ -131,10 +132,68 @@ function chart(object) {
    });
 
 
-
-
-
-
 }
 
- 
+
+
+function chartPiza(object) {
+   var data = []
+
+   for (let i = 0; i < object.length; i++) {
+
+      data[i] = [uf[i], object[i]]
+
+   }
+
+   for (let i = 0; i < object.length; i++) {
+      Highcharts.chart('cont', {
+         chart: {
+            type: 'column' 
+             
+         },
+         title: {
+            text: 'Quantidade de respiradores'
+         }, subtitle: {
+            text: 'Entregues por estado do Brasil 2020/2021'
+         },
+         xAxis: {
+            type: 'category',
+            labels: {
+               rotation: -45,
+               style: {
+                  fontSize: '13px',
+                  fontFamily: 'Verdana, sans-serif'
+               }
+            }
+         },
+         yAxis: {
+            min: 0,
+            title: {
+               text: 'Quantidade de respiradores'
+            }
+         },
+         legend: {
+            enabled: false
+         },
+         tooltip: {
+            pointFormat: 'Quantidade: <b>{point.y}</b>'
+         },
+         series: [{
+            name: 'Respiradores',
+            data: data,
+            dataLabels: {
+               enabled: false,
+               rotation: -90,
+               color: '#FFFFFF',
+               align: 'right',
+               format: '{point.y}', // one decimal
+               y: 10, // 10 pixels down from the top
+               style: {
+                  fontSize: '13px',
+                  fontFamily: 'Verdana, sans-serif'
+               }
+            }
+         }]
+      });
+   }
+}

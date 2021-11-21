@@ -1,11 +1,8 @@
 const cors = require('cors')
 const express = require('express')
 const app = express()
-const result = [];
 const CSVToJSON = require('csvtojson')
-
-const fs = require('fs');
-
+ 
 CSVToJSON().fromFile("HospDat\\api\\csv\\distribuicao_respiradores.csv").then(source => {
      Respiradores(source)
 })
