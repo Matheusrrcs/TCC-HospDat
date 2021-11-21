@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const CSVToJSON = require('csvtojson')
  
-CSVToJSON().fromFile("HospDat\\api\\csv\\distribuicao_respiradores.csv").then(source => {
+CSVToJSON().fromFile("HospDat\\assets\\api\\csv\\distribuicao_respiradores.csv").then(source => {
      Respiradores(source)
 })
 
