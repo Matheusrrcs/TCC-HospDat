@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const CSVToJSON = require('csvtojson')
 
-CSVToJSON().fromFile("HospDat\\assets\\api\\csv\\distribuicao_respiradores.csv").then(source => {
+CSVToJSON().fromFile("csv\\distribuicao_respiradores.csv").then(source => {
     Respiradores(source)
 })
 
@@ -25,12 +25,12 @@ function Respiradores(valor) {
     })
 
 }
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
 
 // app.listen('4567')
 
 
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
 
 
