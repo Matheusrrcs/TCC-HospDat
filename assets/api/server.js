@@ -10,13 +10,13 @@ const app = express()
 
 // app.use(cors())
 
-app.get('/titulos', (req, res) => {
-    return res.json([
-        { name: 'Distribuição de respiradores' }
+    app.get('/titulos', (req, res) => {
+        return res.json([
+            { name: 'Distribuição de respiradores' }
 
 
-    ])
-})
+        ])
+    })
 
 // function Respiradores(valor) {
 
