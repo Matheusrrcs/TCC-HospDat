@@ -14,7 +14,7 @@
     ],
     "headers": [
         {
-            "source": "/api/(.*)",
+            "source": "assets/api/(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
