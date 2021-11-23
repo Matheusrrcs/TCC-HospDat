@@ -5,9 +5,7 @@ fetch("http://localhost:3000/distribuicao_respiradores").then((response) =>
    response.json()).then((json) => {
 
       init(json)
-
-
-
+ 
    }).catch((error) => {
       console.log(error)
    });
