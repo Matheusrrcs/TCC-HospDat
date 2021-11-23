@@ -7,7 +7,6 @@ CSVToJSON().fromFile("csv\\distribuicao_respiradores.csv").then(source => {
     Respiradores(source)
 })
 
-
 app.use(cors())
 
     app.get('/titulos', (req, res) => {
