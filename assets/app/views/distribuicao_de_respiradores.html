@@ -1,11 +1,44 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="0">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner ">
         <div class="carousel-item active">
+            <div class="details">
+                <h2 class="title">Distribuição de Respiradores</h2>
+                <small class="miniTitle">Última Atualização 20 de Agosto de 2021, 13:13 (UTC-03:00)</small>
+
+                <div class="title-itens">
+                    <p class="subtitle">Esta base de dados contém informações sobre respiradores distribuídos pelo
+                        Ministério da Saúde a estados e municípios.</p>
+                    <p>Dicionário de dados:</p>
+                    <p><strong>Data:</strong> Data de solicitação de entrega à distribuidora</p>
+                    <p><strong>Fornecedor:</strong>Nome da empresa fornecedora dos equipamentos;</p>
+                    <p><strong>Destino:</strong> Estado de destino do respirador;
+                    <p><strong>Estado/Municipio:</strong> tipo de unidade da federação que será o destino da entrega;
+                    </p>
+                    <p><strong>Tipo:</strong> Tipo do equipamento</p>
+                    <p><strong>Quantidade:</strong> unidades entregues;</p>
+                    <p><strong>Valor:</strong> Valor total da entrega, em reais;</p>
+                    <p><strong>Destinatario:</strong> entidade que recebeu o bem;</p>
+                    <p><strong>UF:</strong> UF de entrega;</p>
+                    <p><strong>Data de Entrega:</strong> Data de entrega no destinatário.</p>
+                </div>
+                <a href="api/csv/distribuicao_respiradores.csv" id="csvLink"><img src="imagens/csv.png" alt=""
+                        id="csvIcon">
+                    <p><strong>Distribuição de Respiradores: </strong> Separador: ";" Codificação:
+                        "UTF-8"</p>
+
+                </a>
+            </div>
+
+        </div>
+
+        <div class="carousel-item ">
 
             <div id="container"></div>
         </div>
@@ -16,7 +49,14 @@
 
             </figure>
         </div>
-     
+        <div class="carousel-item">
+
+            <figure class="highcharts-figure">
+                <div id="contPizza"></div>
+
+            </figure>
+        </div>
+
     </div>
 
 </div>

@@ -20,6 +20,7 @@ function apenasNumeros(string) {
 function init(json) {
    dados.states(json)
    dados.amount(json)
+   dados.amountState(json)
 }
 
 const dados = {
@@ -69,8 +70,37 @@ const dados = {
          soma = 0;
 
       }
+
       chartPiza(dados);
    }
+ ,amountState(value){
+   let somaQuant = 0
+   let somaPre = 0
+   let result
+   let dados = []
+
+   for (let i = 0; i < uf.length; i++) {
+
+      for (user of value) {
+
+         if (user.DESTINO == uf[i]) {
+
+            somaQuant = somaQuant + apenasNumeros(user.QUANTIDADE)
+            somaPre = somaPre + apenasNumeros(user.VALOR)
+           
+         }
+
+      }
+       result =  somaPre /somaQuant ;
+      dados[i] = parseInt(result);
+
+      somaQuant = 0
+      somaPre = 0
+       
+
+   }
+   chartsRing(dados);
+ }
 
 }
 
@@ -100,7 +130,7 @@ function chartMap(object) {
       },
 
       subtitle: {
-         text: 'Por estado do Brasil 2020/2021'
+         text: 'Por estado do Brasil'
       },
 
       mapNavigation: {
@@ -152,7 +182,7 @@ function chartPiza(object) {
          title: {
             text: 'Quantidade de respiradores'
          }, subtitle: {
-            text: 'Entregues por estado do Brasil 2020/2021'
+            text: 'Entregues por estado do Brasil'
          },
          xAxis: {
             type: 'category',
@@ -194,4 +224,42 @@ function chartPiza(object) {
          }]
       });
    }
+}
+
+function chartsRing(object){
+   
+
+   var data = [];
+
+   for (let i = 0; i < object.length; i++) {
+
+      data[i] = [uf[i], object[i],object[i]]
+
+   }
+
+   console.log(data);
+   Highcharts.chart('contPizza', {
+      chart: {
+        type: 'variablepie'
+      },
+      title: {
+        text: 'Quantidade media gasta por unidade'
+      }, 
+
+      subtitle: {
+         text: 'Por estado do Brasil'
+      },
+      tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+          'Quantidade gasta: {point.y} '  
+      },
+      series: [{
+        minPointSize: 10,
+        innerSize: '20%',
+        zMin: 0,
+        name: 'countries',
+        data: data
+      }]
+    });
 }
