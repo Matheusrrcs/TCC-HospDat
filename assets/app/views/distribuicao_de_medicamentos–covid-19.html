@@ -1,0 +1,64 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="0">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
+    </ol>
+    <div class="carousel-inner ">
+        <div class="carousel-item active">
+            <div class="details">
+                <h2 class="title">Distribuição de Medicamentos – COVID-19 </h2>
+                <small class="miniTitle">Última Atualização 20 de Agosto de 2021, 08:13 (UTC-03:00))</small>
+
+                <div class="title-itens">
+                    <p class="subtitle">Esta base de dados apresenta um detalhamento da distribuição dos medicamentos Cloroquina e Oseltamivir realizada pelo Ministério da Saúde.</p>
+                    <p>Dicionário de dados:</p>
+                    <p><strong>Região: </strong> Regiões do Brasil;</p>
+                    <p><strong>UF:</strong>Unidades da Federeção;</p>
+                    <p><strong>Destinatário:</strong> Entidade para o qual o medicamento foi enviado;</p>
+                    <p><strong>Localidade:</strong> Nome da cidade da entidade de saúde;
+                    </p>
+                    <p><strong>Item:</strong> Descrição do medicamento enviado;</p>
+                    <p><strong>Programa de Saúde:</strong> Programa de saúde cujo medicamento está vinculado;</p>
+                    <p><strong>Quantidade:</strong>Quantidade de medicamentos enviados em cápsulas (Oseltamivir) ou comprimidos (Difosfato de Cloroquina);</p>
+                    <p><strong>Status:</strong> Situação de envio do medicamento;</p>
+                    <p><strong>Valor Unitário:</strong> Valor unitário de compra em R$.</p>
+                    <p><strong>Data de Entrega:</strong> Data em que o medicamento foi entregue à entidade.</p>
+                    <p><strong>Valor Total:</strong>Valor Total em R$.</p>
+                </div>
+                <a href="api/csv/DistribuicaoCloroquinaOseltamivir.csv" id="csvLink"><img src="imagens/csv.png" alt=""
+                        id="csvIcon">
+                    <p><strong>Distribuições Cloroquina, Hidroxicloroquina e Oseltamivir</strong>  Separador: ","</p>
+
+                </a>
+            </div>
+
+        </div>
+
+        <div class="carousel-item ">
+
+            <div id="container"></div>
+        </div>
+        <div class="carousel-item">
+
+            <figure class="highcharts-figure">
+                <div id="cont"></div>
+
+            </figure>
+        </div>
+        <div class="carousel-item">
+
+            <figure class="highcharts-figure">
+                <div id="contPizza"></div>
+
+            </figure>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/medicamentos.js"></script>

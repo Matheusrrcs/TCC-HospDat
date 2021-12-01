@@ -1,6 +1,6 @@
 
 
- fetch("http://localhost:3000/titulos").then((response) =>
+ fetch("https://hospdata.vercel.app/titulos").then((response) =>
   response.json()).then((json) => {
   
   dataBase(json)    
@@ -15,13 +15,13 @@ function show(valor){
 
 function dataBase(valor){
  
-  let data = Array.from({ length: valor.length }).map((_, i) => `<a href="#/${valor[i].name.toLowerCase().replaceAll("ã","a").replaceAll("ç","c").replaceAll(" ","_")}">${valor[i].name.toLowerCase()}</a>`)
+  let data = Array.from({ length: valor.length }).map((_, i) => `<a href="#/${valor[i].name.toLowerCase().replaceAll("ã","a").replaceAll("ç","c").replaceAll(" ","_").replaceAll("-","_")}">${valor[i].name.toLowerCase()}</a>`)
 
   // for(let i = 0; i < json.length; i++){
   //               data = json[i]
   // }
 
-
+ 
 
   // total de paginas a seres exibidas 
   let perPage = 5;
