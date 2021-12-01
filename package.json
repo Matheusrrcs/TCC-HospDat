@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "@vercel/node": "^1.12.1"
+  },
+  "engines": {
+    "node": "4.1.1"
   }
 }
