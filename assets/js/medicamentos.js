@@ -1,7 +1,7 @@
 
 const uf = ["ACRE", "ALAGOAS", "AMAPA", "AMAZONAS", "BAHIA", "CEARA", "ESPIRITO SANTO", "DISTRITO FEDERAL", "GOIAS", "MARANHÃO", "MINAS GERAIS", "MATO GROSSO DO SUL", "MATO GROSSO", "PARA", "PARAIBA", "PERNAMBUCO", "PIAUI", "PARANA", "RIO DE JANEIRO", "RIO GRANDE DO NORTE", "RONDONIA", "RORAIMA", "RIO GRANDE DO SUL", "SANTA CATARINA", "SERGIPE", "SÃO PAULO", "TOCANTINS"]
 
-fetch("https://hospdata.vercel.app/distribuicao_medicamentos").then((response) =>
+fetch("https://hospdata.herokuapp.com/distribuicao_medicamentos").then((response) =>
    response.json()).then((json) => {
 
       init(json)

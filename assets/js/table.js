@@ -1,6 +1,6 @@
 
 
- fetch("https://hospdata.vercel.app/titulos").then((response) =>
+ fetch("https://hospdata.herokuapp.com/titulos").then((response) =>
   response.json()).then((json) => {
   
   dataBase(json)    

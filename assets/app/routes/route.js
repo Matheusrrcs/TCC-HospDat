@@ -20,7 +20,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/distribuicao_de_respiradores.html'
         })
         .when('/distribuicao_de_medicamentos_covid_19',{
-            templateUrl:'app/views/distribuicao_de_medicamentos–covid-19.html'
+            templateUrl:'app/views/distribuicao_de_medicamentos_covid_19.html'
         })
    
         .otherwise({ redirectTo: '/' });
