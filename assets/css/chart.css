@@ -1,62 +1,4 @@
-    
-
-
-
-   /* @media  (max-height: 2160px)  {
-    #container {
-        height: 2000px;
-        min-width: 310px;
-        max-width: 1600px;
-        margin: 1.5rem auto;
-        margin-bottom: 2rem;
-    }
-    
-
-    #cont{
-        height: 2000px;
-        min-width: 310px;
-        max-width: 3000px;
-        margin: 1.5rem auto;
-        margin-bottom: 2rem;
-    }
-
-#contPizza{
-    height: 2000px;
-    min-width: 310px;
-    max-width:  2000px;
-    margin: 1.5rem auto;
-    margin-bottom: 2rem;
-}
-} */
  
-@media   (max-height: 720) {
-    #container {
-        height: 930px;
-        min-width: 310px;
-        max-width: 800px;
-        margin: 1.5rem auto;
-        margin-bottom: 2rem;
-    }
-    
-
-    #cont{
-        height:  930px;
-        min-width: 310px;
-        max-width: 1500px;
-        margin: 1.5rem auto;
-        margin-bottom: 2rem;
-    }
-
-#contPizza{
-    height: 930px;
-    min-width: 310px;
-    max-width:  1500px;
-    margin: 1.5rem auto;
-    margin-bottom: 2rem;
-}
-
-}
-  
 #container {
     height: 500px;
     min-width: 310px;
@@ -80,11 +22,11 @@
     margin: 1.5rem auto;
     margin-bottom: 2rem;
 }
+
  
 
-
     
-    .carousel-indicators li{
+.carousel-indicators li{
     background-color: #15105e;
     height: 0.5rem;
     border-radius: 0.7rem;
@@ -111,7 +53,7 @@
     
     .title-itens{ 
         margin-left: 2rem;
-        margin-top: 1rem;
+        margin-top: 0.2rem;
     }
     
 
@@ -125,7 +67,7 @@
     #csvLink{
         margin-top:0.51em;
         align-items: center;
-        margin-bottom:3rem;
+        margin-bottom:2.3rem;
     margin-left: 2rem;
     background-color: #EEEEEE;;
     border-radius:15px;
@@ -138,7 +80,7 @@
     margin:1rem;
     }
 
-  
+
 
     #csvIcon{
         display: flex;
@@ -153,3 +95,151 @@
     #csvLink:hover{
         background-color:#c9c8c8;
     }
+
+
+ 
+
+
+@media (min-width: 1593px) {
+    #container {
+        height: 600px;
+        min-width: 310px;
+        max-width: 1200px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+    #cont{
+        height: 600px;
+         min-width: 310px;
+        max-width: 1200px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+
+#contPizza{
+    height: 600px;
+    min-width: 310px;
+    max-width:  1200px;
+    margin: 1.5rem auto;
+    margin-bottom: 2rem;
+  }
+  .title-itens{ 
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+.title-itens p {
+    margin: 0.6rem;
+
+}
+
+#csvLink{
+    margin-top:0.51em;
+    align-items: center;
+    margin-bottom:3rem;
+margin-left: 2rem;
+background-color: #EEEEEE;;
+border-radius:15px;
+height:4rem;
+    width:calc(100% - 10%);
+
+}
+ 
+}
+
+@media (min-width: 1709px) {
+    #container {
+        height: 750px;
+        min-width: 310px;
+        max-width: 1200px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+    #cont{
+        height: 750px;
+         min-width: 310px;
+        max-width: 1200px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+
+#contPizza{
+    height: 750px;
+    min-width: 310px;
+    max-width:  1200px;
+    margin: 1.5rem auto;
+    margin-bottom: 2rem;
+  }
+  .title-itens{ 
+    margin-left: 2rem;
+    margin-top: 2rem;
+    height: 500px;
+}
+.title-itens p {
+    margin: 1rem;
+
+}
+#csvLink{
+    margin-top:0.51em;
+    align-items: center;
+    margin-bottom:3rem;
+margin-left: 2rem;
+background-color: #EEEEEE;;
+border-radius:15px;
+height:4rem;
+    width:calc(100% - 10%);
+
+}
+}
+
+@media (min-width: 1990px) {
+    #container {
+        height: 900px;
+        min-width: 310px;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+    #cont{
+        height:  900px;
+        min-width: 310px;
+        max-width: 1500px;
+        margin: 1.5rem auto;
+        margin-bottom: 2rem;
+    }
+
+#contPizza{
+    height: 900px;
+    min-width: 310px;
+    max-width:  1500px;
+    margin: 1.5rem auto;
+    margin-bottom: 2rem;
+  }
+
+  .title-itens{ 
+    margin-left: 2rem;
+    margin-top: 2rem;
+    height: 500px;
+}
+.title-itens p {
+    margin: 1.5rem;
+
+}
+ 
+#csvLink{
+    margin-top:6rem;
+    align-items: center;
+    margin-bottom:3rem;
+margin-left: 2rem;
+background-color: #EEEEEE;;
+border-radius:15px;
+height:4rem;
+    width:calc(100% - 10%);
+
+}
+}
+
+
+
+
+
+

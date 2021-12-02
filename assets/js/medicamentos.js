@@ -1,5 +1,8 @@
 
 const uf = ["ACRE", "ALAGOAS", "AMAPA", "AMAZONAS", "BAHIA", "CEARA", "ESPIRITO SANTO", "DISTRITO FEDERAL", "GOIAS", "MARANHÃO", "MINAS GERAIS", "MATO GROSSO DO SUL", "MATO GROSSO", "PARA", "PARAIBA", "PERNAMBUCO", "PIAUI", "PARANA", "RIO DE JANEIRO", "RIO GRANDE DO NORTE", "RONDONIA", "RORAIMA", "RIO GRANDE DO SUL", "SANTA CATARINA", "SERGIPE", "SÃO PAULO", "TOCANTINS"]
+const rg = ["NORDESTE", "NORTE", "SUDESTE", "SUL", "CENTRO-OESTE"]
+
+const Nordeste = []
 
 fetch("https://hospdata.herokuapp.com/distribuicao_medicamentos").then((response) =>
    response.json()).then((json) => {
@@ -14,7 +17,7 @@ fetch("https://hospdata.herokuapp.com/distribuicao_medicamentos").then((response
 function init(json) {
    dados.states(json)
    dados.amount(json)
- 
+   dados.amountRegion(json)
 }
 
 function apenasNumeros(string) {
@@ -79,7 +82,35 @@ const dados = {
       }
 
       chartPiza(dados)
-   } 
+   },
+   amountRegion(value) {
+      let soma = 0
+
+      let dados = []
+      aux = []
+
+      for (let i = 0; i < rg.length; i++) {
+
+         for (user of value) {
+
+            if (user.REGIAO == rg[i]) {
+
+               aux = apenasNumeros(user.field12)
+               if (!isNaN(aux)) {
+                  soma = soma + aux
+               }
+
+
+            }
+
+         }
+
+         dados[i] = soma;
+         soma = 0;
+      }
+
+      chartsRing(dados);
+   }
 }
 
 function chartMap(object) {
@@ -204,4 +235,50 @@ function chartPiza(object) {
 
 }
 
- 
+
+function chartsRing(object) {
+
+   var data = []
+
+   for (let i = 0; i < object.length; i++) {
+
+      data[i] = [rg[i], object[i]]
+
+   }
+
+   // Build the chart
+   Highcharts.chart('contPizza', {
+      chart: {
+         plotBackgroundColor: null,
+         plotBorderWidth: null,
+         plotShadow: false,
+         type: 'pie'
+      },
+      title: {
+         text: 'Porcentagem de gasto por região'
+      },
+      tooltip: {
+         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+         point: {
+            valueSuffix: '%'
+         }
+      },
+      plotOptions: {
+         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+               enabled: false
+            },
+            showInLegend: true
+         }
+      },
+      series: [{
+         name: 'Região',
+         colorByPoint: true,
+         data: data
+      }]
+   });
+}

@@ -237,7 +237,7 @@ function chartsRing(object){
 
    }
 
-   console.log(data);
+ 
    Highcharts.chart('contPizza', {
       chart: {
         type: 'variablepie'
