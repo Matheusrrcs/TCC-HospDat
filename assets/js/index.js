@@ -1,44 +1,67 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-let bolH = false;
+
+let bolH = true;
 let bolD = true;
 let bolS = true;
+
 let home = document.querySelector("#home");
 let data = document.querySelector("#data");
 let sobre = document.querySelector("#sobre");
 
+var url_atual = window.location.href;
 
-function changeA(value){
+if (url_atual == "https://hospdata.herokuapp.com/#/") {
+
+  home.classList.toggle("active");
+}
+else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" || url_atual != "https://hospdata.herokuapp.com/#/" || !url_atual != "https://hospdata.herokuapp.com/#/sobre") {
+  data.classList.toggle("active");
+}
+else if (url_atual == "https://hospdata.herokuapp.com/#/sobre") {
+  sobre.classList.toggle("active");
+}
 
 
 
-  if(value == 'home' && bolH){
-    home.classList.toggle("active");
+function changeA(value) {
+
+  if (value == 'home' && bolH) {
+
+    if (!home.classList.contains("active")) {
+      home.classList.toggle("active");
+    }
     data.classList.remove("active");
     sobre.classList.remove("active");
     bolH = false;
     bolD = true;
     bolS = true;
   }
-  else if(value == 'data' && bolD){
-    
-    data.classList.toggle("active");
+  if (value == 'data' && bolD) {
+
+    if (!data.classList.contains("active")) {
+      data.classList.toggle("active");
+    }
+
     home.classList.remove("active");
     sobre.classList.remove("active");
     bolH = true;
     bolD = false;
     bolS = true;
   }
-  else if(value == 'sobre'  && bolS){
- 
-    sobre.classList.toggle("active");
+  if (value == 'sobre' && bolS) {
+
+    if (!sobre.classList.contains("active")) {
+      sobre.classList.toggle("active");
+    }
+
     home.classList.remove("active");
     data.classList.remove("active");
     bolH = true;
     bolD = true;
     bolS = false;
   }
-  
+
 }
 
 function btnStart() {
