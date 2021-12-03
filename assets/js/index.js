@@ -9,17 +9,29 @@ let home = document.querySelector("#home");
 let data = document.querySelector("#data");
 let sobre = document.querySelector("#sobre");
 
-var url_atual = window.location.href;
-
-if (url_atual == "https://hospdata.herokuapp.com/#/" || url_atual == "https://hospdata.herokuapp.com/" ) {
-
+ 
+if ( window.location.href == "https://hospdata.herokuapp.com {
+  
   home.classList.toggle("active");
 }
-else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" && url_atual != "https://hospdata.herokuapp.com/" && url_atual != "https://hospdata.herokuapp.com/#/sobre" && url_atual != "https://hospdata.herokuapp.com/#/") {
+if( window.location.href == "https://hospdata.herokuapp.com/"){
+  home.classList.toggle("active");
+}
+if ( window.location.href == "https://hospdata.herokuapp.com/#/sobre") {
+  sobre.classList.toggle("active");
+}
+
+if(window.location.href == "https://hospdata.herokuapp.com/#/dataBase") {
+  
   data.classList.toggle("active");
 }
-else if (url_atual == "https://hospdata.herokuapp.com/#/sobre") {
-  sobre.classList.toggle("active");
+if(window.location.href == "https://hospdata.herokuapp.com/#/distribuicao_de_respiradores") {
+  
+  data.classList.toggle("active");
+}
+if(window.location.href == "https://hospdata.herokuapp.com/#/distribuicao_de_medicamentos_covid_19") {
+  
+  data.classList.toggle("active");
 }
 
 
