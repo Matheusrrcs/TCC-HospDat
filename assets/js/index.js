@@ -15,7 +15,7 @@ if (url_atual == "https://hospdata.herokuapp.com/#/" || url_atual == "https://ho
 
   home.classList.toggle("active");
 }
-else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" && url_atual != "https://hospdata.herokuapp.com/" && url_atual != "https://hospdata.herokuapp.com/#/sobre" || url_atual != "https://hospdata.herokuapp.com/#/") {
+else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" && url_atual != "https://hospdata.herokuapp.com/" && url_atual != "https://hospdata.herokuapp.com/#/sobre" && url_atual != "https://hospdata.herokuapp.com/#/") {
   data.classList.toggle("active");
 }
 else if (url_atual == "https://hospdata.herokuapp.com/#/sobre") {
