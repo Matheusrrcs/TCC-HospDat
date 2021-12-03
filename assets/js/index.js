@@ -11,11 +11,11 @@ let sobre = document.querySelector("#sobre");
 
 var url_atual = window.location.href;
 
-if (url_atual == "https://hospdata.herokuapp.com/#/") {
+if (url_atual == "https://hospdata.herokuapp.com/#/" || url_atual == "https://hospdata.herokuapp.com/" ) {
 
   home.classList.toggle("active");
 }
-else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" && url_atual != "https://hospdata.herokuapp.com/#/" && url_atual != "https://hospdata.herokuapp.com/#/sobre") {
+else if (url_atual == "https://hospdata.herokuapp.com/#/dataBase" && url_atual != "https://hospdata.herokuapp.com/" && url_atual != "https://hospdata.herokuapp.com/#/sobre" || url_atual != "https://hospdata.herokuapp.com/#/") {
   data.classList.toggle("active");
 }
 else if (url_atual == "https://hospdata.herokuapp.com/#/sobre") {
