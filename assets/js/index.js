@@ -10,7 +10,7 @@ let data = document.querySelector("#data");
 let sobre = document.querySelector("#sobre");
 
  
-if ( window.location.href == "https://hospdata.herokuapp.com {
+if ( window.location.href == "https://hospdata.herokuapp.com/#/"){
   
   home.classList.toggle("active");
 }
