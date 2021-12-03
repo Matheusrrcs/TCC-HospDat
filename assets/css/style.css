@@ -131,7 +131,10 @@
   background: #FFF;
   color: var(--i-color);
 }
- 
+.sidebar .links_name:hover{
+ color: var(--i-color);
+}
+
 .sidebar li a .links_name{
   color: #fff;
   font-size: 15px;
