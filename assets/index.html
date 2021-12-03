@@ -25,18 +25,25 @@
       <ul class="nav-list">
 
         <li>
-          <a href="#/">
+          <a href="#/" class="option active" id="home" onclick="changeA('home')">
             <i class="bx bx-home-alt"></i>
             <span class="links_name">Página inicial</span>
           </a>
           <span class="tp">Página inicial</span>
         </li>
         <li>
-          <a href="#/dataBase">
+          <a href="#/dataBase" id="data" class="option" onclick="changeA('data')">
             <i class="bx bx-data"></i>
             <span class="links_name">Base de dados</span>
           </a>
           <span class="tp">Base da dados</span>
+        </li>
+        <li>
+          <a href="#/sobre" id="sobre" class="option" onclick="changeA('sobre')" >
+            <i class='bx bx-help-circle' ></i>
+            <span class="links_name">Quem somos</span>
+          </a>
+          <span class="tp">Quem somos</span>
         </li>
       </ul>
     </div>

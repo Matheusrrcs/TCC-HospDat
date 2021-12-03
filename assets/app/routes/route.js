@@ -14,6 +14,8 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when('/dashBoard',{
             templateUrl: 'app/views/dashBoard.html'
+        })  .when('/sobre',{
+            templateUrl: 'app/views/sobre.html'
         })
         .when('/distribuicao_de_respiradores',{
             
