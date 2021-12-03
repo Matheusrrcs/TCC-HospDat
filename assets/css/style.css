@@ -120,10 +120,10 @@
   transition: all 0.4s ease;
   background: var(--nav-color);
 }
-.option:hover{
-  background: #FFF;
-   color: var(--i-color);
+.sidebar li a:hover .links_name{
+  color: var(--i-color);
 }
+
 .sidebar li a.active{
   background: #FFF;
   color: var(--i-color);
